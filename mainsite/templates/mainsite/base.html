@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    {% block title %}
+    <title>Best Online Food Delivery Service in India | MyOnlineMeal.com</title>
+    {% endblock title%} {%block css%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1170px)"
+      href="{%static 'css/phone.css' %}"
+    />
+    {% endblock css %} {%block css2%} {% endblock css2%}
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <div id="logo">
+        <a class="logo" href="{% url 'home' %}"
+          ><img src="{%static 'images/logo.png' %}" alt="MyOnlineMeal.com"
+        /></a>
+      </div>
+      <ul>
+        <li class="item"><a href="{%url 'home'%}">Home</a></li>
+        <li class="item"><a href="{% url 'services' %}">Services</a></li>
+        <li class="item"><a href="{% url 'ourClints' %}">Our Clients</a></li>
+        <li class="item"><a href="{% url 'contactUs' %}">Contact Us</a></li>
+      </ul>
+    </nav>
+    {% block body %} {%endblock body%}
+    <footer>
+      <div class="center">
+        Copyright &copy; www.myOnlineMeal.com. All rights reserved!
+      </div>
+    </footer>
+    <script src="{% static 'js/base.js' %}"></script>
+  </body>
+</html>
